@@ -1,9 +1,10 @@
 package calculator;
 
-public class StringCalculator 
+public class StringCalculator
 {
 	private int result=0;
 	private String numbers[];
+	private String negative_nums="";
 	
 	int Add(String input) throws Exception
     {
@@ -13,7 +14,7 @@ public class StringCalculator
 		 if(input.charAt(0) == '/' && input.charAt(1) == '/' && input.charAt(3) == '\n')
 		 {
              char delimiter = input.charAt(2);
-             numbers = input.split("[//"+delimiter+",\n]");
+             numbers = input.split("[/"+delimiter+",\n]");
          }
          else
          {
@@ -22,14 +23,33 @@ public class StringCalculator
 	 
 
 		 if(numbers.length == 1)
-              return Integer.parseInt(input);
+		 {
+              
+              if(Integer.parseInt(input) <0)
+              {
+		           negative_nums = input;
+                   throw new Exception("negatives not allowed: " + negative_nums);
+              }
+              else
+            	  return Integer.parseInt(input);
+		 }
 		 
 		 for(int i=0; i<numbers.length; i++)
 		 {
 			   if(!numbers[i].equals(""))
+			   {
 				    result += Integer.parseInt(numbers[i]);
+			        if(Integer.parseInt(numbers[i]) <0)
+				           negative_nums += numbers[i] + " ";
+			   }
 		 }
-                
-		 return result;
+		 
+		 if(negative_nums.equals(""))        
+		        return result;
+		 else
+		 {
+			 throw new Exception("negatives not allowed: " + negative_nums);
+		 }
+		 	 
     } 
 }
