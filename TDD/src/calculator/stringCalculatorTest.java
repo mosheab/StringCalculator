@@ -18,8 +18,8 @@ public class stringCalculatorTest {
        public void testOneNumber()
 	   {
                StringCalculator calc = new StringCalculator();
-               int result = calc.Add("1");
-               assertEquals(result, 1);
+               int result = calc.Add("100");
+               assertEquals(result, 100);
 	   }
 
 }
