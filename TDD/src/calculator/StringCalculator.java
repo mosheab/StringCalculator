@@ -14,7 +14,9 @@ public class StringCalculator
 		 if(numbers.length == 1)
               return Integer.parseInt(input);
 		 
-		 result = Integer.parseInt(numbers[0])+Integer.parseInt(numbers[1]);
+		 for(int i=0; i<numbers.length; i++)
+                  result += Integer.parseInt(numbers[i]);
+			  
 		 return result;
     } 
 }
