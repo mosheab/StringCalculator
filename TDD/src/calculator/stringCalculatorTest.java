@@ -28,5 +28,13 @@ public class stringCalculatorTest {
            int result = calc.Add("1,2");
            assertEquals(result, 3);
     }
+	
+	@Test
+    public void testNoLimitOnNumbers()
+	{
+            StringCalculator calc = new StringCalculator();
+            int result = calc.Add("1,2,3");
+            assertEquals(result, 6);
+      }
 
 }
