@@ -35,6 +35,14 @@ public class stringCalculatorTest {
             StringCalculator calc = new StringCalculator();
             int result = calc.Add("1,2,3");
             assertEquals(result, 6);
-      }
+    }
+	
+	@Test
+    public void testLinesInsteadOfCommas()
+	{
+            StringCalculator calc = new StringCalculator();
+            int result = calc.Add("1,2\n3");
+            assertEquals(result, 6);
+    }
 
 }
