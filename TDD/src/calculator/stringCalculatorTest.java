@@ -14,12 +14,19 @@ public class stringCalculatorTest {
           assertEquals(result, 0);
 	}
 	
-	   @Test
-       public void testOneNumber()
-	   {
-               StringCalculator calc = new StringCalculator();
-               int result = calc.Add("100");
-               assertEquals(result, 100);
-	   }
+	@Test
+    public void testOneNumber()
+    {
+           StringCalculator calc = new StringCalculator();
+           int result = calc.Add("100");
+           assertEquals(result, 100);
+	}
+	@Test
+	public void testTwoNumbers()
+	{
+           StringCalculator calc = new StringCalculator();
+           int result = calc.Add("1,2");
+           assertEquals(result, 3);
+    }
 
 }
