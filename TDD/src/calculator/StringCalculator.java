@@ -9,7 +9,7 @@ public class StringCalculator
 		 if(input.isEmpty())
 			return 0;
 		
-		 String[] numbers = input.split(",");
+		 String[] numbers = input.split("[,\n]");
 
 		 if(numbers.length == 1)
               return Integer.parseInt(input);
