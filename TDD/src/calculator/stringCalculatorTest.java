@@ -7,8 +7,11 @@ import org.junit.Test;
 public class stringCalculatorTest {
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testEmptyString()
+	{
+		  StringCalculator calc = new StringCalculator();
+          int result = calc.Add("");
+          assertEquals(result, 0);
 	}
 
 }
