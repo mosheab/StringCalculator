@@ -2,21 +2,34 @@ package calculator;
 
 public class StringCalculator
 {
-	private int result;
+	private int result=0;
+	private String numbers[];
 	
 	int Add(String input)
     {
 		 if(input.isEmpty())
 			return 0;
-		
-		 String[] numbers = input.split("[,\n]");
+		 
+		 if(input.charAt(0) == '/' && input.charAt(1) == '/' && input.charAt(3) == '\n')
+		 {
+             char delimiter = input.charAt(2);
+             numbers = input.split("[//"+delimiter+",\n]");
+         }
+         else
+         {
+             numbers= input.split("[,\n]");
+         }
+	 
 
 		 if(numbers.length == 1)
               return Integer.parseInt(input);
 		 
 		 for(int i=0; i<numbers.length; i++)
-                  result += Integer.parseInt(numbers[i]);
-			  
+		 {
+			   if(!numbers[i].equals(""))
+				    result += Integer.parseInt(numbers[i]);
+		 }
+                
 		 return result;
     } 
 }

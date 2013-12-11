@@ -49,8 +49,8 @@ public class stringCalculatorTest {
      public void testSupportDifferentDelimiters()
 	 {
              StringCalculator calc = new StringCalculator();
-             int result = calc.Add("//;\n1;2");
-             assertEquals(result, 6);
+             int result = calc.Add("//;\n1;2,3\n4");
+             assertEquals(result,10);
      }
 
 }
