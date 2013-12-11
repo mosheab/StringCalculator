@@ -52,5 +52,23 @@ public class stringCalculatorTest {
              int result = calc.Add("//;\n1;2,3\n4");
              assertEquals(result,10);
      }
+	 
+     @Test
+     public void testWithNegativeNumbers()
+     {
+             StringCalculator calc = new StringCalculator();
+            
+             try
+             {
+            	 int result = calc.Add("-4,-5");
+            	 assertEquals(result, -9);
+             }
+            
+           
+             catch(Exception e)
+             {
+                     System.out.println(e);
+             }
+     }
 
 }

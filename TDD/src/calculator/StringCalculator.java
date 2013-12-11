@@ -1,11 +1,11 @@
 package calculator;
 
-public class StringCalculator
+public class StringCalculator 
 {
 	private int result=0;
 	private String numbers[];
 	
-	int Add(String input)
+	int Add(String input) throws Exception
     {
 		 if(input.isEmpty())
 			return 0;
